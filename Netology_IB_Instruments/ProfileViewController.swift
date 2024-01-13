@@ -7,6 +7,16 @@
 
 import UIKit
 
-class ProfileViewController: NSObject {
+class ProfileViewController: UIViewController {
+    
+    private var profileView : ProfileView {
+        let profileView = Bundle.main.loadNibNamed("ProfileView", owner: nil, options: nil)?.first as! ProfileView
+        return profileView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(profileView)
+    }
 
 }
